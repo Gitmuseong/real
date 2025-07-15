@@ -1,0 +1,9 @@
+import joblib
+from sklearn.ensemble import RandomForestRegressor
+
+# 예시 학습 코드
+model = RandomForestRegressor()
+model.fit(X_train, y_train)
+
+# 저장
+joblib.dump(model, "model.pkl")
