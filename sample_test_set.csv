@@ -1,0 +1,16 @@
+import pandas as pd
+
+# CSV 파일 불러오기
+df = pd.read_csv("Mineral_Dataset_Supplementary_Info.csv")
+
+# 사용할 열
+features = [
+    "density_Average", "atomicweight_Average", "val_e_Average",
+    "ionenergy_Average", "el_neg_chi_Average", "Hardness"
+]
+
+# 결측치 제거하고 상위 1개 추출
+test_sample = df[features].dropna().head(1)
+
+# CSV 파일로 저장
+test_sample.to_csv("sample_test_set.csv", index=False)
