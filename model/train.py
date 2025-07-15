@@ -24,17 +24,6 @@ y = combined_df["Hardness"]
 # 범주형 처리 (있다면)
 X = pd.get_dummies(X)
 
-# 학습-테스트 분리
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# 데이터 불러오기
-df = pd.read_csv("Artificial_Crystals_Dataset.csv")
-
-# 필요한 특성과 라벨 선택
-features = ['Density', 'Formation_energy', 'Gap', 'Elasticity', 'Stability']
-X = df[features]
-y = df['Hardness']
-
 # 모델 학습
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model = RandomForestRegressor()
